@@ -1,0 +1,258 @@
+@import "variables";
+
+//@extend-elements
+//original selectors
+//ul,  ol
+%extend_1 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+//original selectors
+//h1,  h2,  h3,  h4,  h5,  h6
+%extend_2 {
+    font-family: $font_0, $font_1;
+    font-weight: normal;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+//original selectors
+//input[type="text"],  input[type="password"],  input[type="email"]
+%extend_3 {
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 2px 1px 1px 2px;
+    color: $color_15;
+    font-size: 14px;
+    margin-bottom: 10px;
+    height: 36px;
+}
+
+//original selectors
+//.btn-default:hover,  .btn-default:focus,  .btn-default:active,  .btn-default.active,  .open .dropdown-toggle.btn-default
+%extend_4 {
+    background-color: #CACFD2;
+    border-color: #CACFD2;
+    color: #FFFFFF;
+}
+
+//original selectors
+//.btn-info:hover,  .btn-info:focus,  .btn-info:active,  .btn-info.active,  .open .dropdown-toggle.btn-info
+%extend_5 {
+    background-color: #5DADE2;
+    border-color: #5DADE2;
+    color: #FFFFFF;
+}
+
+//original selectors
+//.btn-danger:hover,  .btn-danger:focus,  .btn-danger:active,  .btn-danger.active,  .open .dropdown-toggle.btn-danger
+%extend_6 {
+    background-color: #EC7063;
+    border-color: #EC7063;
+    color: #FFFFFF;
+}
+
+//original selectors
+//.btn-success:hover,  .btn-success:focus,  .btn-success:active,  .btn-success.active,  .open .dropdown-toggle.btn-success
+%extend_7 {
+    background-color: #58D68D;
+    border-color: #58D68D;
+    color: #FFFFFF;
+}
+
+//original selectors
+//.btn-warning:hover,  .btn-warning:focus,  .btn-warning:active,  .btn-warning.active,  .open .dropdown-toggle.btn-warning
+%extend_8 {
+    background-color: #F5D313;
+    border-color: #F5D313;
+    color: #FFFFFF;
+}
+
+//original selectors
+//.btn-inverse:hover,  .btn-inverse:focus,  .btn-inverse:active,  .btn-inverse.active,  .open .dropdown-toggle.btn-inverse
+%extend_9 {
+    background-color: #415B76;
+    border-color: #415B76;
+    color: #FFFFFF;
+}
+
+//original selectors
+//.fb_button:hover,  .btn-fb:hover
+%extend_10 {
+    background: #4E6FAE;
+    color: $color_2;
+    text-decoration: none;
+}
+
+//original selectors
+//.megamenu .megamenu-content:before,  .megamenu .megamenu-content:after
+%extend_11 {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+//original selectors
+//.navbar-tshop ul.nav li.dropdown:hover ul.dropdown-menu,  div.cartMenu.dropdown:hover div.dropdown-menu
+%extend_12 {
+    display: block;
+    filter: none;
+    opacity: 1;
+}
+
+//original selectors
+//.banner,  .slider-content,  .slider,  .slider-v2
+%extend_13 {
+    width: 100%;
+    display: block;
+    max-height: 540px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+//original selectors
+//.style2 .section-title,  .section-title.style2
+%extend_14 {
+    font-size: 42px;
+    font-weight: lighter;
+    line-height: 44px;
+    margin: 10px 0 20px;
+    padding: 0;
+    position: relative;
+    border: none;
+}
+
+//original selectors
+//.style2 .section-title:after,  .section-title-style2:after,  .section-title.style2:after,  .section-title-style2:after
+%extend_15 {
+    background: #DDDDDD;
+    content: "";
+    display: block;
+    height: 1px;
+    margin-left: 20%;
+    position: absolute;
+    top: 28px;
+    width: 60%;
+    z-index: 1;
+}
+
+//original selectors
+//.section-title-style2 span,  .section-title.style2 span
+%extend_16 {
+    background: #FFFFFF;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    width: auto;
+    z-index: 2;
+}
+
+//original selectors
+//.style2 .section-title span,  .section-title.style2 span,
+%extend_17 {
+    color: $color_33;
+    display: table;
+    position: relative;
+    z-index: 2;
+    background: $color_2;
+    padding: 5px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    width: auto;
+    margin: 0 auto;
+}
+
+//original selectors
+//.parallax-image-1.isios,  .parallax-image-2.isios,  .parallax-image-aboutus.isios,  .parallax-section.isios
+%extend_18 {
+    background-size: 100% auto !important;
+    background-attachment: scroll !important;
+    background-position: center center;
+}
+
+//original selectors
+//.parallax-image-1.isandroid,  .parallax-image-2.isandroid,  .parallax-image-aboutus.isandroid,  .parallax-section.isandroid
+%extend_19 {
+    background-size: cover !important;
+    background-attachment: scroll !important;
+    background-position: center center;
+}
+
+//original selectors
+//.nav-stacked > li.active a,  .nav-stacked > li.active
+%extend_20 {
+    background: none;
+    color: #2C3E50;
+    font-weight: bold;
+}
+
+//original selectors
+//.nav-tabs > li.active > a,  .nav-tabs > li.active > a:hover,  .nav-tabs > li.active > a:focus,  .nav-tabs > li:hover > a
+%extend_21 {
+    color: $color_2 !important;
+    border: 0;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 0;
+}
+
+//original selectors
+//.sp-thumbs a:link,  .sp-thumbs a:visited
+%extend_22 {
+    border: 2px solid #EEEEEE;
+    display: inline-block;
+    margin-bottom: 10px;
+    float: right;
+    margin-right: 0 !important;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: margin 0.2s ease 0s;
+}
+
+//original selectors
+//.cart-actions button,  .cart-actions .wishlist
+%extend_23 {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 3px;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-family: $font_2, $font_7, $font_4, $font_1;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1em;
+    margin: 0 20px 0 0;
+    padding: 14px 20px;
+    text-transform: uppercase;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.25s ease 0s;
+}
+
+//original selectors
+//h2.block-title-2,  .formBox h3,  .block-title-2
+%extend_24 {
+    border-bottom: 1px solid #CECECE;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 15px;
+    padding: 10px 0 0;
+    position: relative;
+    text-transform: uppercase;
+}
+
+//original selectors
+//.sliderInfo .btn-lg,  .sliderText.white .btn
+%extend_25 {
+    font-size: 14px;
+    line-height: 1.471;
+    padding: 5px 15px;
+}
+
+//original selectors
+//.style2 .section-title:after,  .section-title-style2:after,  .section-title.style2:after,  .section-title-style2:after
+%extend_26 {
+    margin-left: 10%;
+    top: 32px;
+    width: 80%;
+}

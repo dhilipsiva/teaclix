@@ -7,6 +7,10 @@ gem 'rails', '4.1.2'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+gem 'compass', '~> 0.12.7'
+gem 'compass-rails', '~> 2.0.0'
+gem 'bootstrap-sass', '~> 3.2.0.1'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
