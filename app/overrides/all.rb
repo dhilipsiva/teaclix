@@ -11,7 +11,7 @@ Deface::Override.new(
   :name => 'set_header_attributes',
   :set_attributes => "#header",
   :attributes => {
-    :class => "navbar navbar-tshop navbar-fixed-top megamenu",
+    :class => "navbar navbar-custom navbar-fixed-top megamenu",
     :role => "navigation"
   })
 

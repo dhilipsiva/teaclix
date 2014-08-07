@@ -861,7 +861,7 @@ legend {
         border: solid 2px $color_2;
     }
 }
-.navbar-tshop {
+.navbar-custom {
     width: 100%;
 }
 .menuWrap {
@@ -995,7 +995,7 @@ legend {
     margin-top: 10px;
 }
 @media(min-width: 979px) {
-    .navbar-tshop ul.nav li.dropdown {
+    .navbar-custom ul.nav li.dropdown {
         ul.dropdown-menu {
         }
         &:hover ul.dropdown-menu {
