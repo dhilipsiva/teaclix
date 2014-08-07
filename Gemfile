@@ -46,3 +46,5 @@ gem 'spring',        group: :development
 gem 'spree', '2.3.1'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-3-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-3-stable'
+
+gem 'rspec-core', '~> 3.0.3'
