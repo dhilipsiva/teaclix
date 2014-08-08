@@ -3441,3 +3441,7 @@ span.success {
     height: 2px;
     @include transition(width 1s);
 }
+
+#wrapper {
+    padding-top: 80px;
+}
