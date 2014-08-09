@@ -40,3 +40,12 @@ Deface::Override.new(
   :attributes => {
     :class => "userMenu"
   })
+
+
+Deface::Override.new(
+  :virtual_path => 'spree/shared/_sidebar',
+  :name => 'set_sidebar_class',
+  :set_attributes => "#sidebar",
+  :attributes => {
+    :class => "col-lg-3 col-md-3 col-sm-12"
+  })
