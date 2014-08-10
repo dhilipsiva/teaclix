@@ -77,16 +77,14 @@ Deface::Override.new(
   :text => "<h4>Categories</h4>")
 
 
-
-=begin
 Deface::Override.new(
-  :virtual_path => 'spree/layouts/spree_application',
-  :name => 'set_category_heading',
-  :set_attributes => "#",
+  :virtual_path => 'spree/shared/_taxonomies',
+  :name => 'set_category_heading_color',
+  :set_attributes => "h4",
   :attributes => {
-    :class => "panel-title"
+    :class => "panel-heading"
+   # :style => "background-color:red"
   })
-=end
 
 
 =begin
