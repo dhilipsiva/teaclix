@@ -59,3 +59,42 @@ Deface::Override.new(
     :class => "col-lg-9"
   })
 
+
+Deface::Override.new(
+  :virtual_path => 'spree/shared/_products',
+  :name => 'set_individual_product_class',
+  :set_attributes => "#product",
+  :attributes => {
+    :class => "row  categoryProduct xsResponse clearfix"
+  })
+
+
+
+Deface::Override.new(
+  :virtual_path => 'spree/shared/_taxonomies',
+  :name => 'set_category_heading',
+  :replace => "h6",
+  :text => "<h4>Categories</h4>")
+
+
+
+=begin
+Deface::Override.new(
+  :virtual_path => 'spree/layouts/spree_application',
+  :name => 'set_category_heading',
+  :set_attributes => "#",
+  :attributes => {
+    :class => "panel-title"
+  })
+=end
+
+
+=begin
+Deface::Override.new(
+  :virtual_path => 'spree/layouts/spree_application',
+  :name => 'set_category_heading',
+  :set_attributes => "#",
+  :attributes => {
+    :class => "panel-title"
+  })
+=end
