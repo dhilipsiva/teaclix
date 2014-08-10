@@ -49,3 +49,13 @@ Deface::Override.new(
   :attributes => {
     :class => "col-lg-3 col-md-3 col-sm-12"
   })
+
+
+Deface::Override.new(
+  :virtual_path => 'spree/layouts/spree_application',
+  :name => 'set_product_class',
+  :set_attributes => "#content",
+  :attributes => {
+    :class => "col-lg-9"
+  })
+
