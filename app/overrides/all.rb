@@ -1,38 +1,3 @@
-=begin
-Deface::Override.new(
-  :virtual_path => 'spree/shared/_header',
-  :name => 'customize_logo',
-  :replace => "#logo",
-  :text => "<%= link_to Teaclix, spree.root_path %>")
-
-
-Deface::Override.new(
-  :virtual_path => 'spree/shared/_header',
-  :name => 'set_header_attributes',
-  :set_attributes => "#header",
-  :attributes => {
-    :class => "navbar navbar-custom navbar-fixed-top megamenu",
-    :role => "navigation"
-  })
-
-Deface::Override.new(
-  :virtual_path => 'spree/shared/_header',
-  :name => 'set_top_nav_bar_class',
-  :set_attributes => "#top-nav-bar",
-  :attributes => {
-    :class => "navbar-top"
-  })
-=end
-
-Deface::Override.new(
-  :virtual_path => 'spree/shared/_main_nav_bar',
-  :name => 'set_main_nav_bar_class',
-  :set_attributes => "#main-nav-bar",
-  :attributes => {
-    :class => "userMenu"
-  })
-
-
 Deface::Override.new(
   :virtual_path => 'spree/shared/_nav_bar',
   :name => 'set_nav_bar_class',
@@ -53,7 +18,7 @@ Deface::Override.new(
 
 Deface::Override.new(
   :virtual_path => 'spree/layouts/spree_application',
-  :name => 'set_product_class',
+  :name => 'set_application_content_class',
   :set_attributes => "#content",
   :attributes => {
     :class => "col-lg-9"
@@ -69,30 +34,26 @@ Deface::Override.new(
   })
 
 
-
 Deface::Override.new(
   :virtual_path => 'spree/shared/_taxonomies',
-  :name => 'set_category_heading',
-  :replace => "h6",
-  :text => "<h4>Categories</h4>")
-
-
-Deface::Override.new(
-  :virtual_path => 'spree/shared/_taxonomies',
-  :name => 'set_category_heading_color',
+  :name => 'set_category_heading_class',
   :set_attributes => "h4",
   :attributes => {
     :class => "panel-heading"
-   # :style => "background-color:red"
   })
 
 
-=begin
 Deface::Override.new(
-  :virtual_path => 'spree/layouts/spree_application',
-  :name => 'set_category_heading',
-  :set_attributes => "#",
+  :virtual_path => 'spree/shared/_products',
+  :name => 'set_products_item_class',
+  :set_attributes => "#products li",
   :attributes => {
-    :class => "panel-title"
+    :class => "item col-sm-4 col-lg-4 col-md-4 col-xs-6"
   })
-=end
+
+
+Deface::Override.new(
+  :virtual_path => 'spree/shared/_products',
+  :name => 'change_large_products_item_thumbnail_size',
+  :replace => ".product-image",
+  :text => '<%= link_to small_image(product, :itemprop => "image"), url, :itemprop => "url" %>')
