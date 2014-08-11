@@ -66,7 +66,7 @@ Deface::Override.new(
   :attributes => {
     :class => "image"
   }
-  :sequence { :after => "set_products_item_image_class" }
+  :sequence => { :after => "set_products_item_image_class" }
   )
 
 
