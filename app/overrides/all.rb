@@ -44,6 +44,35 @@ Deface::Override.new(
 
 
 Deface::Override.new(
+:virtual_path => 'spree/shared/_products',
+:name => 'set_product_description_class',
+:set_attributes => ".info",
+:attributes => {
+  :class => "description"
+})
+
+
+Deface::Override.new(
+  :virtual_path => 'spree/shared/_products',
+  :name => 'set_products_item_class',
+  :surround_content => ".product-image",
+  :text => '<div class="product"><%=render_original%></div>')
+
+
+Deface::Override.new(
+  :virtual_path => 'spree/shared/_products',
+  :name => 'set_products_item_image_class',
+  :set_attributes => ".product",
+  :attributes => {
+    :class => "image"
+  }
+  :sequence { :after => "set_products_item_image_class" }
+  )
+
+
+
+
+Deface::Override.new(
   :virtual_path => 'spree/shared/_products',
   :name => 'set_products_item_class',
   :set_attributes => "#products li",
@@ -51,9 +80,10 @@ Deface::Override.new(
     :class => "item col-sm-4 col-lg-4 col-md-4 col-xs-6"
   })
 
-
+=begin
 Deface::Override.new(
   :virtual_path => 'spree/shared/_products',
   :name => 'change_large_products_item_thumbnail_size',
   :replace => ".product-image",
   :text => '<%= link_to small_image(product, :itemprop => "image"), url, :itemprop => "url" %>')
+=end
