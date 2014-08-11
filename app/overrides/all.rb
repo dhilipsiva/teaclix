@@ -54,6 +54,13 @@ Deface::Override.new(
 
 Deface::Override.new(
   :virtual_path => 'spree/shared/_products',
+  :name => 'surround_products_item_content',
+  :surround_contents => ".product-image",
+  :text => '<div class="image"><%= render_original %></div>')
+
+
+Deface::Override.new(
+  :virtual_path => 'spree/shared/_products',
   :name => 'set_products_item_image_class',
   :set_attributes => ".product-image",
   :attributes => {
@@ -62,13 +69,6 @@ Deface::Override.new(
   :sequence => {
     :after => "surround_products_item_content"
   })
-
-
-Deface::Override.new(
-  :virtual_path => 'spree/shared/_products',
-  :name => 'surround_products_item_content',
-  :surround_contents => ".product-image",
-  :text => '<div class="image"><%= render_original %></div>')
 
 
 Deface::Override.new(
