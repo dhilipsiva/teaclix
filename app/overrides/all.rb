@@ -30,7 +30,7 @@ Deface::Override.new(
   :name => 'set_individual_product_class',
   :set_attributes => "#product",
   :attributes => {
-    :class => "row  categoryProduct xsResponse clearfix"
+    :class => "row categoryProduct xsResponse clearfix"
   })
 
 
@@ -44,20 +44,12 @@ Deface::Override.new(
 
 
 Deface::Override.new(
-:virtual_path => 'spree/shared/_products',
-:name => 'set_product_description_class',
-:set_attributes => ".info",
-:attributes => {
-  :class => "description"
-})
-
-=begin
-Deface::Override.new(
   :virtual_path => 'spree/shared/_products',
-  :name => 'set_products_item_class',
-  :surround_content => ".product-image",
-  :text => '<div class="image"><%=render_original%></div>')
-
+  :name => 'set_product_description_class',
+  :set_attributes => ".info",
+  :attributes => {
+    :class => "description"
+  })
 
 
 Deface::Override.new(
@@ -68,9 +60,15 @@ Deface::Override.new(
     :class => "product"
   },
   :sequence => {
-    :after => "set_products_item_class"
+    :after => "surround_products_item_content"
   })
-=end
+
+
+Deface::Override.new(
+  :virtual_path => 'spree/shared/_products',
+  :name => 'surround_products_item_content',
+  :surround_contents => ".product-image",
+  :text => '<div class="image"><%= render_original %></div>')
 
 
 Deface::Override.new(
@@ -80,6 +78,7 @@ Deface::Override.new(
   :attributes => {
     :class => "item col-sm-4 col-lg-4 col-md-4 col-xs-6"
   })
+
 
 =begin
 Deface::Override.new(
