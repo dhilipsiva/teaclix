@@ -30,11 +30,11 @@ set :keep_releases, 3
 
 # Lets us work with staging instances without having to checkin config files
 # (instance*.yml + rubber*.yml) for a deploy.  This gives us the
-# convenience of not having to checkin files for staging, as well as 
+# convenience of not having to checkin files for staging, as well as
 # the safety of forcing it to be checked in for production.
 set :push_instance_config, Rubber.env != 'production'
 
-# don't waste time bundling gems that don't need to be there 
+# don't waste time bundling gems that don't need to be there
 set :bundle_without, [:development, :test, :staging] if Rubber.env == 'production'
 
 # Allow us to do N hosts at a time for all tasks - useful when trying
@@ -80,7 +80,7 @@ after "deploy", "cleanup"
 after "deploy:migrations", "cleanup"
 task :cleanup, :except => { :no_release => true } do
   count = fetch(:keep_releases, 5).to_i
-  
+
   rsudo <<-CMD
     all=$(ls -x1 #{releases_path} | sort -n);
     keep=$(ls -x1 #{releases_path} | sort -n | tail -n #{count});
@@ -99,4 +99,21 @@ if Rubber::Util.has_asset_pipeline?
   callbacks[:before].delete_if {|c| c.source == "deploy:assets:symlink"}
   before "deploy:assets:precompile", "deploy:assets:symlink"
   after "rubber:config", "deploy:assets:precompile"
+end
+
+
+def run_interactively(command, server=nil)
+  server ||= find_servers_for_task(current_task).first
+  exec %Q(ssh -l #{user} #{server} -t 'su - #{user} -c "cd #{current_path} && #{command}"')
+end
+
+namespace :rake do
+  desc "Run a task on a remote server."
+  # run like: cap staging rake:invoke task=a_certain_task
+  task :invoke do
+    #run_interactively(
+    run(
+      "cd #{deploy_to}/current && /usr/bin/env bundle exec rake #{ENV['task']} RAILS_ENV=#{rails_env}"
+    )
+  end
 end

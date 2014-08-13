@@ -10,10 +10,10 @@
     name: passenger_nginx
     options: {}
   - !ruby/object:Rubber::Configuration::RoleItem
-    name: collectd
+    name: common
     options: {}
   - !ruby/object:Rubber::Configuration::RoleItem
-    name: common
+    name: collectd
     options: {}
   - !ruby/object:Rubber::Configuration::RoleItem
     name: monit
@@ -29,34 +29,25 @@
     name: mysql_master
     options: {}
   - !ruby/object:Rubber::Configuration::RoleItem
-    name: examples
-    options: {}
-  - !ruby/object:Rubber::Configuration::RoleItem
-    name: graphite_server
-    options: {}
-  - !ruby/object:Rubber::Configuration::RoleItem
-    name: graphite_web
+    name: web
     options: {}
   - !ruby/object:Rubber::Configuration::RoleItem
     name: haproxy
     options: {}
   - !ruby/object:Rubber::Configuration::RoleItem
-    name: web
-    options: {}
-  - !ruby/object:Rubber::Configuration::RoleItem
     name: web_tools
     options: {}
-  instance_id: i-660cd169
+  instance_id: i-3435e83b
   image_type: t2.micro
   image_id: ami-e7b8c0d7
   security_groups:
   - default
   - web
   - web_tools
-  external_host: ec2-54-191-161-193.us-west-2.compute.amazonaws.com
-  external_ip: 54.191.161.193
-  internal_host: ip-172-31-15-96.us-west-2.compute.internal
-  internal_ip: 172.31.15.96
+  external_host: ec2-54-201-244-231.us-west-2.compute.amazonaws.com
+  external_ip: 54.201.244.231
+  internal_host: ip-172-31-3-199.us-west-2.compute.internal
+  internal_ip: 172.31.3.199
   zone: us-west-2c
   provider: aws
   platform: linux
