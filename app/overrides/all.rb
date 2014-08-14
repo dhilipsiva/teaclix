@@ -36,15 +36,6 @@ Deface::Override.new(
 
 Deface::Override.new(
   :virtual_path => 'spree/shared/_products',
-  :name => 'set_individual_product_class',
-  :set_attributes => "#product",
-  :attributes => {
-    :class => "row categoryProduct xsResponse clearfix"
-  })
-
-
-Deface::Override.new(
-  :virtual_path => 'spree/shared/_products',
   :name => 'surround_products_item_content',
   :surround_contents => ".product-image",
   :text => '<div class="image"><%= render_original %></div>')
