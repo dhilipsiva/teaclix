@@ -26,15 +26,6 @@ Deface::Override.new(
 
 
 Deface::Override.new(
-  :virtual_path => 'spree/shared/_products',
-  :name => 'set_individual_product_class',
-  :set_attributes => "#product",
-  :attributes => {
-    :class => "row categoryProduct xsResponse clearfix"
-  })
-
-
-Deface::Override.new(
   :virtual_path => 'spree/shared/_taxonomies',
   :name => 'set_category_heading_class',
   :set_attributes => "h4",
@@ -45,10 +36,10 @@ Deface::Override.new(
 
 Deface::Override.new(
   :virtual_path => 'spree/shared/_products',
-  :name => 'set_product_description_class',
-  :set_attributes => ".info",
+  :name => 'set_individual_product_class',
+  :set_attributes => "#product",
   :attributes => {
-    :class => "description"
+    :class => "row categoryProduct xsResponse clearfix"
   })
 
 
