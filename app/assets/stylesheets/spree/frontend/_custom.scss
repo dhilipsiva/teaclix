@@ -1656,7 +1656,7 @@ legend {
     height: auto;
     @include transition(all 0.3s ease 0s);
     margin-bottom: 15px;
-    height: 480px;
+    height: 400px;
     &.list-view {
         display: block;
         height: auto;
@@ -1738,6 +1738,7 @@ legend {
     border: 1px solid #DDDDDD;
     border-bottom: 1px solid #DDDDDD;
     text-align: center;
+    height: 100%;
     &:hover {
         background: $color_2;
         .image a img {
