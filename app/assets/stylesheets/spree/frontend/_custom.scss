@@ -3450,9 +3450,13 @@ span.success {
 }
 
 #wrapper {
-    padding-top: 80px;
+    padding-top: 100px;
 }
 
 .white-background {
     background-color: white;
+}
+
+#main-nav-bar {
+    background: inherit;
 }
