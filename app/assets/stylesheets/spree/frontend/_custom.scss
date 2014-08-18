@@ -1745,6 +1745,10 @@ legend {
             @include transform(scale(1.15) rotate(-1.5deg));
         }
     }
+    .description{
+        color: black;
+    }
+
 }
 .image {
     display: block;
@@ -3447,4 +3451,8 @@ span.success {
 
 #wrapper {
     padding-top: 80px;
+}
+
+.white-background {
+    background-color: white;
 }
