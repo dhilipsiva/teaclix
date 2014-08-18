@@ -1745,10 +1745,12 @@ legend {
             @include transform(scale(1.15) rotate(-1.5deg));
         }
     }
-    .description{
+    .description {
         color: black;
+        h4 a{
+            color: $color_main_theme;
+        }
     }
-
 }
 .image {
     display: block;
