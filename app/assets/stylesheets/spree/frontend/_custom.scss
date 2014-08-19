@@ -3465,5 +3465,19 @@ span.success {
     margin-top: 5px;
     li a {
         line-height: 35px;
+        text-align: center !important;
+    }
+}
+#header{
+    @include background-image(linear-gradient(right top, #fff 0%, #ebebeb 50%, #fff 100%));
+}
+#top-nav-bar, #main-nav-bar {
+    a {
+        color: $color_main_theme !important;
+        @include border-radius(4px, 4px);
+        &:hover {
+            background-color: $color_main_theme !important;
+            color: white !important;
+        }
     }
 }

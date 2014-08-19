@@ -54,7 +54,7 @@ a {
 	color: #4BB777;
 }
 .navbar-custom {
-	background: $clor_theme_3;
+	background: white;
 }
 .btn-primary {
 	background-color: $clor_theme_3;
@@ -73,9 +73,6 @@ a {
 		@extend %extend_1;
 		background: $clor_theme_3;
 	}
-}
-.navbar-top {
-	background: $clor_theme_4;
 }
 .nav {
 	&.tree {
