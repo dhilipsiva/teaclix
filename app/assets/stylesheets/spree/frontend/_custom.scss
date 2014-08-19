@@ -3237,7 +3237,7 @@ legend {
         float: right;
         font-size: 12px;
         line-height: 30px;
-        padding: 0 20px 0 0;
+        padding: 0 20px 0 20px;
         text-decoration: none;
         @include transition(opacity 0.2s ease-out 0s);
         &:hover {
@@ -3465,7 +3465,6 @@ span.success {
     margin-top: 5px;
     li a {
         line-height: 35px;
-        text-align: center !important;
     }
 }
 #header{
