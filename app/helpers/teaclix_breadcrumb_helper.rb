@@ -1,5 +1,5 @@
 module TeaclixBreadcrumbHelper
-  def teaclix_breadcrumbs(taxon, separator="&nbsp;&raquo;&nbsp;")
+  def teaclix_breadcrumbs(taxon)
     return "" if current_page?("/") || taxon.nil?
 
     crumbs = [[Spree.t(:home), spree.root_path]]
@@ -12,13 +12,11 @@ module TeaclixBreadcrumbHelper
       crumbs << [Spree.t(:products), products_path]
     end
 
-    separator = raw(separator)
-
     crumbs.map! do |crumb|
       content_tag(:li, itemscope:"itemscope", itemtype:"http://data-vocabulary.org/Breadcrumb") do
         link_to(crumb.last, itemprop: "url") do
           content_tag(:span, crumb.first, itemprop: "title")
-        end + (crumb == crumbs.last ? '' : separator)
+        end
       end
     end
 
