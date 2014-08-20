@@ -1731,14 +1731,10 @@ legend {
 }
 .product {
     display: block;
-    height: auto;
     @include transition(all 0.3s ease 0s);
-    border: 1px solid #DDDDDD;
-    border-bottom: 1px solid #DDDDDD;
     text-align: center;
     height: 100%;
     &:hover {
-        background: $color_2;
         .image a img {
             @include transform(scale(1.15) rotate(-1.5deg));
         }
