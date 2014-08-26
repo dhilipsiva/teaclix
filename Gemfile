@@ -51,3 +51,8 @@ gem 'rails_12factor', group: :production
 
 gem 'rubber'
 gem 'open4'
+
+gem "font-awesome-rails"
+
+gem 'spree_wishlist', github: 'spree/spree_wishlist', branch: '2-3-stable'
+gem 'spree_email_to_friend', github: 'spree/spree_email_to_friend', branch: 'master'
