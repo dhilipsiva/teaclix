@@ -2397,11 +2397,18 @@ legend {
     border-bottom: 1px solid #DDDDDD;
     padding-bottom: 12px;
     clear: both;
-    button {
+    button, input {
         @extend %extend_23;
+    }
+    button {
+        color: #FFFFFF;
+    }
+    input{
+        text-align: center;
     }
     .wishlist {
         @extend %extend_23;
+        color: #FFFFFF;
         background: #CCCCCC;
         line-height: 1em;
         text-decoration: none;
@@ -3763,8 +3770,20 @@ sp-current:visited {
             padding-left: 10px;
         }
     }
-.filters_submit {
-    text-align: center;
-    padding-bottom: 15px;
+    .filters_submit {
+        text-align: center;
+        padding-bottom: 15px;
+    }
 }
+
+#product-thumbnails, #similar_items_by_taxon {
+    li{
+        float: left;
+    }
+}
+
+.btn-similar{
+    margin: 4px;
+    border: 1px solid $color_main_theme;
+    color: $color_main_theme;
 }

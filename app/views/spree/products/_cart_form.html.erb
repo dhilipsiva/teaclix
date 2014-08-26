@@ -31,14 +31,11 @@
         <% if @product.price_in(current_currency) and !@product.price.nil? %>
             <div data-hook="product_price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
 
-                <div id="product-price">
-                    <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
-                    <div>
-                        <span class="price selling" itemprop="price">
-                            <%= display_price(@product) %>
-                        </span>
-                        <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
-                    </div>
+                <div id="product-price" class="product-price">
+                    <span class="price-sales" itemprop="price">
+                        <%= display_price(@product) %>
+                    </span>
+                    <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
 
                     <% if @product.master.can_supply? %>
                         <link itemprop="availability" href="http://schema.org/InStock" />
@@ -48,17 +45,16 @@
                     <% end %>
                 </div>
 
-                <div class="add-to-cart">
+                <div class="add-to-cart cart-actions">
                     <%= number_field_tag :quantity, 1, :class => 'title', :min => 1 %>
-                    <%= button_tag :class => 'large primary', :id => 'add-to-cart-button', :type => :submit do %>
+                    <%= button_tag :class => 'button btn-cart cart', :id => 'add-to-cart-button', :type => :submit do %>
                         <%= Spree.t(:add_to_cart) %>
                     <% end %>
                 </div>
             </div>
         <% else %>
             <div id="product-price">
-                <br>
-                <div><span class="price selling" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span></div>
+                <span class="price-sales" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span>
             </div>
         <% end %>
     </div>
