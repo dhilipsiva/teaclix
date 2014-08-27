@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/DynamoMTL/spree_chimpy.git
+  revision: eeb07430e6cd27127a59897a900f0ecf8ba3df1b
+  branch: master
+  specs:
+    spree_chimpy (2.0.0.alpha)
+      mailchimp (>= 0.0.9)
+      spree_core (~> 2.1)
+
+GIT
   remote: git://github.com/spree/spree_email_to_friend.git
   revision: df0bb4dc2237f68c9e9e873fb07942a0a02203a5
   branch: master
@@ -186,6 +195,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailchimp (0.0.9)
+      httparty
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.4.0)
@@ -379,6 +390,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spree (= 2.3.1)
   spree_auth_devise!
+  spree_chimpy!
   spree_email_to_friend!
   spree_gateway!
   spree_wishlist!

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826040911) do
+ActiveRecord::Schema.define(version: 20140827085818) do
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -87,6 +87,21 @@ ActiveRecord::Schema.define(version: 20140826040911) do
 
   add_index "spree_calculators", ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type"
   add_index "spree_calculators", ["id", "type"], name: "index_spree_calculators_on_id_and_type"
+
+  create_table "spree_chimpy_order_sources", force: true do |t|
+    t.integer  "order_id"
+    t.string   "campaign_id"
+    t.string   "email_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_chimpy_subscribers", force: true do |t|
+    t.string   "email",                     null: false
+    t.boolean  "subscribed", default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_configurations", force: true do |t|
     t.string   "name"
@@ -817,6 +832,7 @@ ActiveRecord::Schema.define(version: 20140826040911) do
     t.datetime "updated_at"
     t.string   "spree_api_key",          limit: 48
     t.datetime "remember_created_at"
+    t.boolean  "subscribed"
   end
 
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true
