@@ -1,11 +1,6 @@
-<% content_for :sidebar do %>
-    <div data-hook="homepage_sidebar_navigation">
-        <%= render :partial => 'spree/shared/taxonomies' %>
-    </div>
-<% end %>
+<% @content_class="col-lg-12 col-md-12 col-sm-12" %>
 <% cache [I18n.locale, current_currency, @product] do %>
     <div  class="row transitionfx" data-hook="product_show" itemscope itemtype="http://schema.org/Product">
-        <% @body_id = 'product-details' %>
         <div class="col-lg-6 col-md-6 col-sm-6" data-hook="product_left_part">
             <div data-hook="product_left_part_wrap">
                 <div id="product-images" data-hook="product_images">
