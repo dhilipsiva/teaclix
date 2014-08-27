@@ -1966,10 +1966,9 @@ legend {
     clear: both;
     display: block;
 }
-.footer {
+#footer {
     background: #EDEFF1;
     height: auto;
-    padding-bottom: 30px;
     position: relative;
     width: 100%;
     border-bottom: 1px solid #CCCCCC;
@@ -2004,6 +2003,15 @@ legend {
     a {
         color: #78828D;
     }
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid #DDDDDD;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    p.pull-left {
+        padding-top: 6px;
+    }
+}
 }
 .newsLatterBox {
     overflow: hidden;
@@ -2028,15 +2036,7 @@ legend {
 .bg-gray {
     box-shadow: 0 1px 0 #B4B3B3;
 }
-.footer-bottom {
-    background: #E3E3E3;
-    border-top: 1px solid #DDDDDD;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    p.pull-left {
-        padding-top: 6px;
-    }
-}
+
 .breadcrumb {
     border: 1px solid #DDDDDD;
     background: none;
@@ -3327,7 +3327,7 @@ legend {
     }
 }
 .supportLi h4 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: lighter;
     line-height: normal;
     margin-bottom: 0 !important;
@@ -3725,9 +3725,6 @@ a {
 }
 .btn-discover:hover {
 	background: #27AE60;
-}
-.footer a:hover {
-	color: #4EC67F;
 }
 .form-control:focus {
 	border-color: #4EC67F;

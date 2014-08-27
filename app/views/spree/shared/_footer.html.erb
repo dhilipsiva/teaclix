@@ -1,7 +1,119 @@
-<footer id="footer" class="sixteen columns" data-hook>
-    <!-- Some footer content will go inside these divs -->
-    <div id="footer-left" class="columns alpha eight" data-hook>
-    </div>
-    <div id="footer-right" class="columns omega eight" data-hook>
+<footer id="footer" class="footer" data-hook>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <h3>
+                    Support
+                </h3>
+                <ul>
+                    <li class="supportLi">
+                        <h4>
+                            <a class="inline" href="callto:+919901765962">
+                                <strong>
+                                    <%= fa_icon 'phone' %>
+                                    (+91) 9901765962
+                                </strong>
+                            </a>
+                        </h4>
+                        <h4>
+                            <a class="inline" href="mailto:rajendran.sivaiah@gmail.com">
+                                <%= fa_icon 'envelope-o' %>
+                                rajendran.sivaiah@gmail.com
+                            </a>
+                        </h4>
+                    </li>
+                </ul>
+            </div>
+            <% @taxonomies = Spree::Taxonomy.all if !@taxonomies %>
+            <% @taxonomies.each do |taxonomy| %>
+                <% cache [I18n.locale, taxonomy, 1] do %>
+                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                        <h3><%= Spree.t(taxonomy.name) %></h3>
+                        <ul>
+                            <%= sidebar_taxons_tree(taxonomy.root, @taxon, 1) %>
+                        </ul>
+                    </div>
+                <% end %>
+            <% end %>
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                <h3>
+                    My Account
+                </h3>
+                <ul>
+                    <li>
+                        <a href="/account">
+                            My Account
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/wishlist">
+                            Wishlist
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/account">
+                            Order list
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 ">
+                <h3>
+                    Stay in touch
+                </h3>
+                <ul>
+                    <li>
+                        <div class="input-append newsLatterBox text-center">
+                            <input type="text" class="full text-center"  placeholder="Email ">
+                            <button class="btn  bg-gray" type="button">
+                                Subscribe
+                                <%= fa_icon 'long-arrow-right' %>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="social">
+                    <li>
+                        <a href="http://facebook.com">
+                            <%= fa_icon 'facebook' %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://twitter.com">
+                            <%= fa_icon 'twitter' %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com">
+                            <%= fa_icon 'google-plus' %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://youtube.com">
+                            <%= fa_icon 'pinterest' %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://youtube.com">
+                            <%= fa_icon 'youtube' %>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div><!--/.row-->
+        <div class="row footer-bottom">
+            <p>
+                &copy; TeaClix 2014. All right reserved.
+            </p>
+            <!--
+            <div class="pull-right paymentMethodImg">
+                <img height="30" class="pull-right" src="images/site/payment/master_card.png" alt="img" >
+                <img height="30" class="pull-right" src="images/site/payment/paypal.png" alt="img" >
+                <img height="30" class="pull-right" src="images/site/payment/american_express_card.png" alt="img" >
+                <img  height="30" class="pull-right" src="images/site/payment/discover_network_card.png" alt="img" >
+                <img  height="30" class="pull-right" src="images/site/payment/google_wallet.png" alt="img" >
+            </div>
+            -->
+        </div>
     </div>
 </footer>
