@@ -7,13 +7,13 @@
     <head data-hook="inside_head">
         <%= render :partial => 'spree/shared/head' %>
     </head>
-    <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    <body data-hook="body">
         <div class="container">
             <%= render :partial => 'spree/shared/header' %>
             <div id="wrapper" class="row" data-hook>
                 <%= teaclix_breadcrumbs(@taxon) %>
                 <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
-                <div id="content" class="col-lg-9 col-md-9 col-sm-12" data-hook>
+                <div id="content" class="<%= @content_class || 'col-lg-9 col-md-9 col-sm-12' %>" data-hook>
                     <%= flash_messages %>
                     <%= yield %>
                 </div>
