@@ -1,0 +1,16 @@
+<% @content_class="col-lg-12 col-md-12 col-sm-12" %>
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+<div class="row" id="new-customer">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 text-center" data-hook="signup">
+        <h6><%= Spree.t(:new_customer) %></h6>
+        <%= form_for resource, :as => :spree_user, :url => spree.registration_path(@user) do |f| %>
+            <div data-hook="signup_inside_form">
+                <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+                <p><%= f.submit Spree.t(:create), :class => 'btn btn-primary' %></p>
+            </div>
+        <% end %>
+        <%= Spree.t(:or) %>&nbsp;<%= link_to Spree.t(:login_as_existing), spree.login_path %>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-5"> </div>
+</div>
+<div data-hook="login_extras"></div>
