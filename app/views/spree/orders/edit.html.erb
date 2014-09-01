@@ -1,17 +1,12 @@
 <% @content_class = "col-lg-12 col-md-12 col-sm-12 col-xs-12" %>
 <div data-hook="cart_container">
     <div class="row">
-        <div class="col-lg-9 col-md-9 col-sm-7">
-            <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i> <%= Spree.t(:shopping_cart) %> </span></h1>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-5 rightSidebar">
-            <h4 class="caps"><a href="category.html"><i class="fa fa-chevron-left"></i> Back to shopping </a></h4>
-        </div>
+        <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i> <%= Spree.t(:shopping_cart) %> </span></h1>
     </div>
     <% if @order.line_items.empty? %>
         <div class="row" data-hook="empty_cart">
             <p><%= Spree.t(:your_cart_is_empty) %></p>
-            <p><%= link_to Spree.t(:continue_shopping), products_path, :class => 'button continue' %></p>
+            <%= link_to Spree.t(:continue_shopping), products_path, :class => 'continue btn btn-default' %>
         </div>
     <% else %>
         <div data-hook="outside_cart_form" class="row cartContent">
