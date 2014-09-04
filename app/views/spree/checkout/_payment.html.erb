@@ -11,7 +11,7 @@
             </div>
             <div id="existing_cards">
                 <p class="field" data-hook="existing_cards">
-                    <table class="existing-credit-card-list">
+                    <table class="existing-credit-card-list table table-bordered">
                         <tbody>
                             <% @payment_sources.each do |card| %>
                                 <tr id="<%= dom_id(card,'spree')%>" class="<%= cycle('even', 'odd') %>">
@@ -31,23 +31,25 @@
         <% end %>
         <div id="payment-method-fields" data-hook>
             <% @order.available_payment_methods.each do |method| %>
-                <p>
-                    <label>
-                        <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
-                        <%= Spree.t(method.name, :scope => :payment_methods, :default => method.name) %>
-                    </label>
-                </p>
+                <div class="panel-group paymentMethod" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading panel-heading-custom">
+                            <h4 class="panel-title">
+                                <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
+                                <strong>
+                                    <%= Spree.t(method.name, :scope => :payment_methods, :default => method.name) %>
+                                </strong>
+                            </h4>
+                        </div>
+                        <div id="payment_method_<%= method.id %>" class="panel-collapse" data-hook>
+                            <div class="panel-body">
+                                <%= render :partial => "spree/checkout/payment/#{method.method_type}", :locals => { :payment_method => method } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <% end %>
         </div>
-        <ul id="payment-methods" data-hook>
-            <% @order.available_payment_methods.each do |method| %>
-                <li id="payment_method_<%= method.id %>" class="<%= 'last' if method == @order.available_payment_methods.last %>" data-hook>
-                    <fieldset>
-                        <%= render :partial => "spree/checkout/payment/#{method.method_type}", :locals => { :payment_method => method } %>
-                    </fieldset>
-                </li>
-            <% end %>
-        </ul>
         <br style="clear:both;" />
         <p class='field' data-hook='coupon_code'>
             <%= form.label :coupon_code %><br />
@@ -55,8 +57,11 @@
         </p>
     </div>
 </fieldset>
-<br class="space" />
-<div class="form-buttons" data-hook="buttons">
-    <%= submit_tag Spree.t(:save_and_continue), :class => 'continue button primary' %>
-    <script>Spree.disableSaveOnClick();</script>
+<div class="cartFooter row" data-hook="buttons">
+    <div class="box-footer">
+        <div class="pull-right">
+            <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-primary btn-small' %>
+            <script>Spree.disableSaveOnClick();</script>
+        </div>
+    </div>
 </div>
