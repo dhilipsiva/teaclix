@@ -21,7 +21,7 @@ module Spree
       states = checkout_states
       items = states.map do |state|
         text = Spree.t("order_state.#{state}").titleize
-        css_class = "col-lg-3 col-md-3 col-sm-6 col-xs-12 #{state}"
+        css_class = "col-lg-3 col-md-3 col-sm-3 col-xs-3"
         css_class += ' current' if state == @order.state
         icon = fa_icon font_class state
         content_tag('li', content_tag('span', icon + text), class: css_class)

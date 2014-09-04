@@ -2569,12 +2569,11 @@ legend {
             display: inline-block;
             font-size: 14px;
             height: 100%;
-            padding: 20px 0 20px;
+            padding: 20px 0 0px;
             text-align: center;
             vertical-align: middle;
             width: 100%;
             text-transform: uppercase;
-            font-size: 13px;
             i {
                 background: $color_85;
                 border-radius: 0;
@@ -2588,10 +2587,6 @@ legend {
                 text-align: center;
                 width: auto;
                 float: none !important;
-            }
-            span {
-                display: block;
-                padding: 5px 0;
             }
         }
         &.current span {
