@@ -2550,7 +2550,7 @@ legend {
     font-size: 22px;
     font-weight: bold;
 }
-.orderStep {
+.progress-steps {
     clear: both;
     display: inline-block;
     height: auto;
@@ -2564,14 +2564,12 @@ legend {
         margin: 0;
         min-height: 55px;
         padding: 0;
-        width: 20%;
-        a {
+        span {
             background: #EFF0F2;
             display: inline-block;
             font-size: 14px;
             height: 100%;
-            line-height: normal;
-            padding: 20px 0 0;
+            padding: 20px 0 20px;
             text-align: center;
             vertical-align: middle;
             width: 100%;
@@ -2581,10 +2579,10 @@ legend {
                 background: $color_85;
                 border-radius: 0;
                 display: block;
-                font-size: 20px;
+                font-size: 40px;
                 height: auto;
                 left: 0;
-                line-height: 40px;
+                line-height: 50px;
                 margin-top: -20px;
                 padding: 0;
                 text-align: center;
@@ -2596,7 +2594,7 @@ legend {
                 padding: 5px 0;
             }
         }
-        &.active a {
+        &.current span {
             color: $color_2;
             position: relative;
             &:after {
@@ -3015,7 +3013,7 @@ legend {
         @extend %extend_26;
         @extend %extend_26;
     }
-    .orderStep li a span {
+    .progress-steps li span {
         font-size: 11px;
     }
     .categoryFooter .pagination {
@@ -3749,11 +3747,11 @@ sp-current:visited {
 #pager2 span.cycle-pager-active {
 	background: #4EC67F !important;
 }
-.orderStep li {
-	a {
+.progress-steps li {
+	span {
 		background: #EFF0F2;
 	}
-	&.active a {
+	&.current span {
 		background: none repeat scroll 0 0 #1ABC9C;
 		&:after {
 			border-top-color: #1ABC9C !important;
