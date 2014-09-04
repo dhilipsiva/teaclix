@@ -1,4 +1,4 @@
-<fieldset id='shipping_method' data-hook>
+<fieldset class="row" id='shipping_method' data-hook>
     <legend align="center"><%= Spree.t(:delivery) %></legend>
     <div class="inner" data-hook="shipping_method_inner">
         <div id="methods">
@@ -8,7 +8,7 @@
                         <%= Spree.t(:package_from) %>
                         <strong class="stock-location-name" data-hook="stock-location-name"><%= ship_form.object.stock_location.name %></strong>
                     </h3>
-                    <table class="stock-contents" data-hook="stock-contents">
+                    <table class="table table-bordered" data-hook="stock-contents">
                         <colgroup>
                             <col style="width: 10%;" />
                             <col style="width: 60%;" />
@@ -33,17 +33,20 @@
                         </tbody>
                     </table>
                     <h5 class="stock-shipping-method-title"><%= Spree.t(:shipping_method) %></h5>
-                    <ul class="field radios shipping-methods">
+                    <table class="table table-bordered">
+                        <thead>
+                            <td>Method</td>
+                            <td>Name</td>
+                            <td>cost</td>
+                        </thead>
                         <% ship_form.object.shipping_rates.each do |rate| %>
-                            <li class="shipping-method">
-                                <label>
-                                    <%= ship_form.radio_button :selected_shipping_rate_id, rate.id %>
-                                    <span class="rate-name"><%= rate.name %></span>
-                                    <span class="rate-cost"><%= rate.display_cost %></span>
-                                </label>
-                            </li>
+                            <tr>
+                                <td><%= ship_form.radio_button :selected_shipping_rate_id, rate.id %></td>
+                                <td><%= rate.name %></td>
+                                <td><%= rate.display_cost %></td>
+                            </tr>
                         <% end %>
-                    </ul>
+                    </table>
                 </div>
             <% end %>
             <% if @differentiator.try(:missing?) %>
@@ -51,7 +54,7 @@
                     <h3 class="stock-location" data-hook="stock-location">
                         <%= Spree.t(:unshippable_items) %>
                     </h3>
-                    <table class="stock-contents" data-hook="stock-missing">
+                    <table class="table table-bordered" data-hook="stock-missing">
                         <colgroup>
                             <col style="width: 10%;" />
                             <col style="width: 60%;" />
@@ -86,7 +89,10 @@
         <% end %>
     </div>
 </fieldset>
-<br />
-<div class="form-buttons" data-hook="buttons">
-    <%= submit_tag Spree.t(:save_and_continue), :class => 'continue button primary' %>
+<div class="cartFooter row" data-hook="buttons">
+    <div class="box-footer">
+        <div class="pull-right">
+            <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-primary btn-small' %>
+        </div>
+    </div>
 </div>
