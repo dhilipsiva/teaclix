@@ -1,33 +1,36 @@
 <% @content_class = "col-lg-12 col-md-12 col-sm-12 col-xs-12" %>
-<div id="checkout" data-hook>
-    <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
-    <div class="row" data-hook="checkout_header">
-        <h1 class="section-title-inner" data-hook="checkout_title">
-            <%= fa_icon "shopping-cart" %>
-            <%= Spree.t(:checkout) %>
-        </h1>
-    </div>
-    <ol class="row progress-steps" data-hook="checkout_progress" id="checkout-step-<%= @order.state %>">
-        <%= checkout_progress %>
-    </ol>
-    <div class="row" data-hook="checkout_content">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  data-hook="checkout_form_wrapper">
-            <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
-                <% unless @order.email? %>
-                    <p class="field" style='clear: both'>
-                        <%= form.label :email %><br />
-                        <%= form.text_field :email %>
-                    </p>
-                <% end %>
-                <%= render @order.state, :form => form %>
-            <% end %>
+<div id="checkout" class="row" data-hook>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+        <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+        <div class="row" data-hook="checkout_header">
+            <h1 class="section-title-inner" data-hook="checkout_title">
+                <%= fa_icon "shopping-cart" %>
+                <%= Spree.t(:checkout) %>
+            </h1>
         </div>
-        <% if @order.state != 'confirm' %>
-            <div id="checkout-summary" data-hook="checkout_summary_box" class="columns omega four">
-                <%= render :partial => 'summary', :locals => { :order => @order } %>
+        <ol class="row progress-steps" data-hook="checkout_progress" id="checkout-step-<%= @order.state %>">
+            <%= checkout_progress %>
+        </ol>
+        <div class="row" data-hook="checkout_content">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  data-hook="checkout_form_wrapper">
+                <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
+                    <% unless @order.email? %>
+                        <p class="field" style='clear: both'>
+                            <%= form.label :email %><br />
+                            <%= form.text_field :email %>
+                        </p>
+                    <% end %>
+                    <%= render @order.state, :form => form %>
+                <% end %>
             </div>
-        <% end %>
+        </div>
+
     </div>
+    <% if @order.state != 'confirm' %>
+        <div id="checkout-summary" data-hook="checkout_summary_box" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <%= render :partial => 'summary', :locals => { :order => @order } %>
+        </div>
+    <% end %>
 </div>
 <script>
     Spree.current_order_id = "<%= @order.number %>"
