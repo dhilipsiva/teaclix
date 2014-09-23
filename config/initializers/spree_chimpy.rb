@@ -1,12 +1,12 @@
 Spree::Chimpy.config do |config|
   # your API key as provided by MailChimp
-  config.key = 'ebdb83be59c358a9811ead4d86177bb1-us2'
+  config.key = '8d2a0a71f1138c45901e1932e6b73547-us9'
 
   # extra api options for the Mailchimp gem
   # config.api_options = { throws_exceptions: false, timeout: 3600 }
 
   # name of your list, defaults to "Members"
-  config.list_name = 'teaclix-beta'
+  config.list_name = 'TeaClix Newsletter'
 
   # Allow users to be subscribed by default. Defaults to false
   # If you enable this option, it's strongly advised that your enable
