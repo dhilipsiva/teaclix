@@ -3471,24 +3471,24 @@ span.success {
 }
 ::-moz-selection {
 	color: $color_theme_1;
-	background: $color_theme_2;
+	background: $color_main_theme;
 }
 
 ::selection {
 	color: $color_theme_1;
-	background: $color_theme_2;
+	background: $color_main_theme;
 
 }
 
 .site-color {
-	color: $color_theme_3 !important;
+	color: $color_main_theme !important;
 }
 a {
 	&:hover {
-		color: $color_theme_3;
+		color: $color_main_theme;
 	}
 	&:focus {
-		color: $color_theme_3;
+		color: $color_main_theme;
 	}
 }
 .search-full {
@@ -3504,7 +3504,7 @@ a {
 	background: white;
 }
 .btn-primary {
-	background-color: $color_theme_3;
+	background-color: $color_main_theme;
 	color: #FFFFFF;
 	&:hover {
 		@extend %extend_theme_1;
@@ -3514,11 +3514,11 @@ a {
 	}
 	&:active {
 		@extend %extend_theme_1;
-		background: $color_theme_3;
+		background: $color_main_theme;
 	}
 	&.active {
 		@extend %extend_theme_1;
-		background: $color_theme_3;
+		background: $color_main_theme;
 	}
 }
 .nav {
@@ -3583,7 +3583,7 @@ a {
 	border-top: solid #27AE60;
 }
 .btn-site {
-	background: #4EC67F;
+	background: $color_main_theme;
 	&:hover {
 		background: #27AE60;
 	}
@@ -3592,7 +3592,7 @@ a {
 	width: 100%;
 }
 .modal-header {
-	background: #4EC67F;
+	background: $color_main_theme;
 }
 .new-product {
 	background: $color_theme_9 !important;
@@ -3616,21 +3616,21 @@ a {
 }
 .cart-actions {
 	button {
-		background: none repeat scroll 0 0 #4EC67F;
+		background: none repeat scroll 0 0 $color_main_theme;
 		border: 2px solid #27AE60;
 		&:hover {
 			background: $color_theme_1;
 			color: $color_theme_10;
-			border: solid 2px #4EC67F;
+			border: solid 2px $color_main_theme;
 		}
 	}
 	.wishlist {
-		background: none repeat scroll 0 0 #4EC67F;
+		background: none repeat scroll 0 0 $color_main_theme;
 		border: 2px solid #27AE60;
 	}
 }
 .sp-current {
-	border: 2px solid #4EC67F !important;
+	border: 2px solid $color_main_theme !important;
 }
 .promo-1 {
 	background: none repeat scroll 0 0 #27AE60;
@@ -3645,7 +3645,7 @@ a {
 }
 .open .dropdown-toggle.btn-primary {
 	@extend %extend_theme_1;
-	background: $color_theme_3;
+	background: $color_main_theme;
 }
 .pagination > .active > {
 	a {
@@ -3675,10 +3675,10 @@ a {
 }
 .search-box:hover {
 	.form-control {
-		background: #4EC67F;
+		background: $color_main_theme;
 	}
 	.btn-nobg {
-		color: #4EC67F;
+		color: $color_main_theme;
 	}
 }
 .mCS-dark-2 > .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
@@ -3695,23 +3695,23 @@ a {
 	}
 }
 .product:hover {
-	border: 1px solid #4EC67F;
-	border-bottom: 2px solid #4EC67F;
+	border: 1px solid $color_main_theme;
+	border-bottom: 2px solid $color_main_theme;
 }
 .subCategoryList .thumbnail:hover {
-	border: 1px solid #4EC67F;
+	border: 1px solid $color_main_theme;
 }
 #pager a.cycle-pager-active {
 	background: $color_theme_8;
 }
 .pager2 a {
-	border: 1px solid #4EC67F;
+	border: 1px solid $color_main_theme;
 	&.selected {
-		background: #4EC67F;
+		background: $color_main_theme;
 	}
 }
 .newsLatterBox .btn {
-	background: #4EC67F;
+	background: $color_main_theme;
 	&:hover {
 		background: #27AE60;
 	}
@@ -3720,27 +3720,27 @@ a {
 	background: #27AE60;
 }
 .form-control:focus {
-	border-color: #4EC67F;
+	border-color: $color_main_theme;
 }
 .panel-default > .panel-heading {
-	border-top: 4px solid #4EC67F;
+	border-top: 4px solid $color_main_theme;
 }
 .socialIcon a:hover {
-	background: #4EC67F;
+	background: $color_main_theme;
 }
 .sp-thumbs a {
 	&:hover {
-		border: 2px solid #4EC67F !important;
+		border: 2px solid $color_main_theme !important;
 	}
 	&:active {
-		border: 2px solid #4EC67F !important;
+		border: 2px solid $color_main_theme !important;
 	}
 }
 sp-current:visited {
-	border: 2px solid #4EC67F !important;
+	border: 2px solid $color_main_theme !important;
 }
 #pager2 span.cycle-pager-active {
-	background: #4EC67F !important;
+	background: $color_main_theme !important;
 }
 .progress-steps li {
 	span {
@@ -3776,4 +3776,8 @@ sp-current:visited {
     margin: 4px;
     border: 1px solid $color_main_theme;
     color: $color_main_theme;
+}
+
+#logo {
+    height: 45px;
 }
