@@ -24,31 +24,7 @@ paginated_products ||= products
 <% if products.any? %>
     <ul id="products" class="row xsResponse" data-hook>
         <% products.each do |product| %>
-            <% url = product_url(product, :taxon_id => @taxon.try(:id)) %>
-            <li id="product_<%= product.id %>" class="item col-sm-4 col-lg-4 col-md-4 col-xs-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
-                <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : [I18n.locale, current_currency, product]) do %>
-                    <div class="product">
-                        <div class="image">
-                            <%= link_to small_image(product, :itemprop => "image"), url, :itemprop => 'url' %>
-                        </div>
-                        <div class="description">
-                            <h4><%= link_to truncate(product.name, :length => 50), url, :itemprop => "name", :title => product.name %></h4>
-                            <p><%= product.description %></p>
-                        </div>
-                        <div class="price">
-                            <span itemprop="price"><%= display_price(product) %></span>
-                        </div>
-                        <!--
-                        <div class="action-control">
-                            <a class="btn btn-primary">
-                                <i class="glyphicon glyphicon-shopping-cart"> </i>
-                                <%= Spree.t(:add_to_cart) %>
-                            </a>
-                        </div>
-                        --!>
-                    </div>
-                <% end %>
-            </li>
+                <%= render :partial => 'spree/shared/product', locals: { product: product } %>
         <% end %>
         <% reset_cycle("classes") %>
     </ul>
