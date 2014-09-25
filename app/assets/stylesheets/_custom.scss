@@ -1297,14 +1297,13 @@ legend {
     }
 }
 .sliderImg {
-    background: url('../../images/site/loading1.gif') center center no-repeat;
+    background: url('/images/loading.gif') center center no-repeat;
     position: relative;
     top: 0;
     left: 0;
     z-index: 1;
 }
 .banner {
-    margin-top: 70px;
     @include transition(all 0.1s ease-out 0s);
     @extend %extend_13;
     &.down {
@@ -1862,7 +1861,6 @@ legend {
     }
 }
 .parallax-image-1 {
-    background: url(../../images/parallax/parallax.jpg);
     background-size: cover;
     background-attachment: fixed;
     &.ismobile {
@@ -1878,7 +1876,7 @@ legend {
     }
 }
 .parallax-image-2 {
-    background: url(../../images/parallax/people-collage.jpg) fixed;
+    // background: url(../../images/parallax/people-collage.jpg) fixed;
     background-attachment: fixed;
     &.ismobile {
         background-attachment: scroll !important;
@@ -1892,7 +1890,7 @@ legend {
     }
 }
 .parallax-image-aboutus {
-    background: url(../../images/site/about-bg.jpg) no-repeat 50% -80px fixed;
+    // background: url(../../images/site/about-bg.jpg) no-repeat 50% -80px fixed;
     background-size: cover;
     background-attachment: fixed;
     &.ismobile {
@@ -3780,4 +3778,14 @@ sp-current:visited {
 
 #logo {
     height: 45px;
+}
+#featuredCarousel{
+    .carousel-inner {
+        height: 500px;
+    }
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

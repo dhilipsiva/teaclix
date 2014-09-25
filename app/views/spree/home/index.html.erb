@@ -1,116 +1,56 @@
 <% @content_class = "col-lg-12 col-md-12 col-sm-12 col-xs-12" %>
+<% featured_products = Spree::Taxon.where(:name => "featured").first.products %>
 <div class="banner" data-hook="homepage_products">
-    <div class="full-container">
-        <div class="slider-content">
-            <ul id="pager2" class="container">
-            </ul>
-            <span class="prevControl sliderControl">
-                <i class="fa fa-angle-left fa-3x "></i>
-            </span>
-            <span class="nextControl sliderControl">
-                <i class="fa fa-angle-right fa-3x "></i>
-            </span>
-            <div class="slider slider-v1" data-cycle-swipe=true data-cycle-prev=".prevControl" data-cycle-next=".nextControl" data-cycle-loader="wait">
-                <div class="slider-item slider-item-img1">
-                    <div class="sliderInfo">
-                        <div class="container">
-                            <div class="col-lg-12 col-md-12 col-sm-12 sliderTextFull ">
-                                <div class="inner text-center">
-                                    <div class="topAnima animated">
-                                        <h1 class="uppercase xlarge">FREE SHIPPING</h1>
-                                        <h3 class="hidden-xs"> Free Standard Shipping on Orders Over $100 </h3>
-                                    </div>
-                                    <a class="btn btn-danger btn-lg bottomAnima animated opacity0">
-                                        SHOP NOW ON TSHOP
-                                        <span class="arrowUnicode">►</span>
-                                    </a>
+    <div class="container">
+        <h3 class="section-title style2 text-center"><span>FEATURED</span></h3>
+        <div class="row">
+            <div id="featuredCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#featuredCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#featuredCarousel" data-slide-to="1"></li>
+                    <li data-target="#featuredCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <% featured_products.each_with_index do |product, i| %>
+                        <% url = product_url(product, :taxon_id => @taxon.try(:id)) %>
+                        <div class="item <%= 'active' if i == 0 %>">
+                            <%= link_to large_image(product, :itemprop => "image"), url, :itemprop => 'url' %>
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1><%= product.name %></h1>
+                                    <p><%= product.description %></p>
+                                    <p><%= link_to "Details", url, :itemprop => "name", :title => product.name, :class => "btn btn-lg btn-primary" %></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <img src="http://placehold.it/350x150" class="img-responsive parallaximg sliderImg" alt="img">
+                    <% end %>
                 </div>
+                <a class="left carousel-control" href="#featuredCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#featuredCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
     </div>
 </div>
 <div class="container main-container">
-    <!-- Main component call to action -->
-    <div class="row featuredPostContainer globalPadding style2">
-        <h3 class="section-title style2 text-center"><span>NEW ARRIVALS</span></h3>
-        <div id="productslider" class="owl-carousel owl-theme">
-            <div class="item">
-                <div class="product">
-                    <div class="image">
-                        <a href="product-details.html">
-                            <img src="http://placehold.it/240x400" alt="img" class="img-responsive">
-                        </a>
-                        <div class="promotion">
-                            <span class="new-product"> NEW</span>
-                            <span class="discount">15% OFF</span>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <h4><a href="product-details.html">consectetuer adipiscing </a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        <span class="size">XL / XXL / S </span> </div>
-                    <div class="price">
-                        <span>$25</span>
-                    </div>
-                    <div class="action-control">
-                        <a class="btn btn-primary">
-                            <span class="add2cart">
-                                <i class="glyphicon glyphicon-shopping-cart"> </i>
-                                Add to cart
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="parallax-section parallax-image-1">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="parallax-content clearfix">
-                    <h1 class="parallaxPrce"> $200 </h1>
-                    <h2 class="uppercase">FREE INTERNATIONAL SHIPPING! Get Free Shipping Coupons</h2>
-                    <h3 > Energistically develop parallel mindshare rather than premier deliverables. </h3>
-                    <div style="clear:both"></div>
-                    <a class="btn btn-discover"> <i class="fa fa-shopping-cart"></i> SHOP NOW </a>
-                </div>
-            </div>
-        </div>
+    <h3 class="section-title style2 text-center"><span>NEW ADDITIONS</span></h3>
+    <div class="row xsResponse">
+        <% products = Spree::Product.order("available_on DESC").limit(12) %>
+        <% products.each do |product| %>
+            <%= render :partial => 'spree/shared/product', locals: { product: product } %>
+        <% end %>
     </div>
 </div>
 <div class="container main-container">
     <div class="morePost row featuredPostContainer style2 globalPaddingTop " >
-        <h3 class="section-title style2 text-center"><span>FEATURES PRODUCT</span></h3>
+        <h3 class="section-title style2 text-center"><span>FEATURED TEAS</span></h3>
         <div class="container">
             <div class="row xsResponse">
-                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                    <div class="product">
-                        <div class="image"> <a href="product-details.html"><img src="http://placehold.it/400x240" alt="img" class="img-responsive"></a>
-                            <div class="promotion"> <span class="new-product"> NEW</span> </div>
-                        </div>
-                        <div class="description">
-                            <h4><a href="product-details.html">demonstraverunt lectores </a></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <span class="size">XL / XXL / S </span> </div>
-                        <div class="price"> <span>$25</span>  </div>
-                        <div class="action-control">
-                            <a class="btn btn-primary">
-                                <span class="add2cart">
-                                    <i class="glyphicon glyphicon-shopping-cart"> </i>
-                                    Add to cart
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <% featured_products.each do |product| %>
+                    <%= render :partial => 'spree/shared/product', locals: { product: product } %>
+                <% end %>
             </div>
         </div>
     </div>
 </div>
+<%= javascript_include_tag 'home' %>
