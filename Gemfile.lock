@@ -282,6 +282,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    seed_dump (3.2.0)
+      activerecord (~> 4)
+      activesupport (~> 4)
     select2-rails (3.5.9)
       thor (~> 0.14)
     spree (2.3.1)
@@ -388,6 +391,7 @@ DEPENDENCIES
   rubber
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  seed_dump
   spree (= 2.3.1)
   spree_auth_devise!
   spree_chimpy!
