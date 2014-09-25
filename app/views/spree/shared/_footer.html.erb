@@ -24,8 +24,8 @@
                     </li>
                 </ul>
             </div>
-            <% @taxonomies ||= Spree::Taxonomy.all %>
-            <% @taxonomies.each do |taxonomy| %>
+            <% taxoes = Spree::Taxonomy.where(:name => ["categories", "manufacturers"]) %>
+            <% taxoes.each do |taxonomy| %>
                 <% cache [I18n.locale, taxonomy, 1] do %>
                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
                         <h3><%= Spree.t(taxonomy.name) %></h3>
@@ -102,20 +102,11 @@
                     </li>
                 </ul>
             </div>
-        </div><!--/.row-->
+        </div>
         <div class="row footer-bottom">
             <p>
                 &copy; TeaClix 2014. All right reserved.
             </p>
-            <!--
-            <div class="pull-right paymentMethodImg">
-                <img height="30" class="pull-right" src="images/site/payment/master_card.png" alt="img" >
-                <img height="30" class="pull-right" src="images/site/payment/paypal.png" alt="img" >
-                <img height="30" class="pull-right" src="images/site/payment/american_express_card.png" alt="img" >
-                <img  height="30" class="pull-right" src="images/site/payment/discover_network_card.png" alt="img" >
-                <img  height="30" class="pull-right" src="images/site/payment/google_wallet.png" alt="img" >
-            </div>
-            -->
         </div>
     </div>
 </footer>

@@ -1,6 +1,7 @@
 <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
 <nav class="panel-group" id="taxonomies">
-    <% @taxonomies.each do |taxonomy| %>
+    <% taxoes = Spree::Taxonomy.where(:name => ["categories", "manufacturers"]) %>
+    <% taxoes.each do |taxonomy| %>
         <% cache [I18n.locale, taxonomy, max_level] do %>
             <div class="panel panel-default">
                 <div class="panel-heading">
